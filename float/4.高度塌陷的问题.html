@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style lang="css">
+        .outer {
+            border: 10px red solid;
+
+            /* BFC block formatting context 
+            
+                bfc是css中的一个隐含属性,可以为元素开启BFC,开启BFC该元素会变成一个独立的布局区域
+                - 元素开启BFC后:
+                    1. 开启BFC的元素 不会被浮动元素所覆盖
+                    2. 开启BFC的元素 子元素和父元素的外边距不会重叠
+                    3. 开启BFC的元素 可以包含浮动的子元素
+
+                - 开启元素的BFC:
+                    1. 设置元素的浮动  父元素也float:left;  不推荐
+                    2. 将元素设置为行内块元素 display: inline-block; 不推荐
+                    3. 将元素的overflow设置为一个非visible的值 overflow: hidden 开启BFC 使其可以包含浮动元素
+            */
+
+            overflow: hidden;
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+
+            /* 高度塌陷问题
+                当子元素float之后,子元素无法撑起父元素高度 导致父元素高度丢失
+            */
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+
+</html>
