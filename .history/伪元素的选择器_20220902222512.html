@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 伪元素 ::开头 
+            ::first-letter 表示第一个字母
+            ::first-line 表示第一行
+            ::selection 表示选中的内容
+
+            ::before 元素的开始
+            ::after 元素的最后
+                -before和after必须结果content属性来使用
+        */
+
+        p::first-letter {
+            font-size: 50px;
+        }
+
+
+        p::first-line {
+            background-color: yellow;
+        }
+
+        p::selection {
+            background-color: red;
+        }
+
+        div::before {}
+    </style>
+</head>
+
+<body>
+
+    <div>Hello what are you doing?</div>
+    <p>what is it?</p>
+
+</body>
+
+</html>
