@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+
+            /* 和border一样, outline不会影响可见框的大小 */
+            /* outline: 10px red solid; */
+
+
+            /* 用来设置元素的阴影效果 
+                第一个值 水平偏移量
+                第二个值 垂直偏移量
+                第三个值 阴影的模糊半径
+                第四个值 阴影的颜色
+                 
+            */
+            box-shadow: 10px 10px 40px rgba(0, 0, 0, .5);
+
+        }
+
+        .box1:hover {
+            outline: 10px red solid;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            /* border-top-right-radius: 50px; */
+
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div class="box1">
+        </div>
+        <span>hello world</span> -->
+
+    <div class="box2">
+
+    </div>
+
+
+</body>
+
+</html>
