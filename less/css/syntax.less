@@ -1,0 +1,36 @@
+//less 注释 不会解析到css中
+.box1{
+    background-color: #bfa;
+    .box2{
+        background-color: green;
+        .box4{
+            color: red;
+        }
+    }
+    .box3{
+        background-color: orange;
+    }
+}
+
+//变量，使用@进行定义
+@width:200px;
+@color:#bfa;
+@class:box6;
+
+.box5{
+    width: @width;
+    color: @color;
+}
+
+//作为类名，使用@{变量名}形式 使用
+@{class}{
+    width: @width;
+    background-image: url("@{class}/1.png");
+}
+
+
+.box6{
+    width: 300px;
+    //直接引用属性名
+    height: $width;
+}

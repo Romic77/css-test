@@ -1,0 +1,70 @@
+.box1{
+    .box2{
+        color:red;
+    }
+    >.box3{
+        color:yellow
+    }
+
+    :hover{
+        color:orange;
+    }
+
+    //& 表示外层的父元素
+    div &{
+        width: 330px;
+    }
+}
+
+.p1{
+    width: 100px;
+    height: 100px;
+}
+
+//:extend() p2类样式 继承 p1的样式
+.p2:extend(.p1){
+    color:red;
+}
+
+.p3{
+    //mixin 混合 p1样式混合到p3中， 性能低一点 把 p1的样式复制到p3中
+    .p1();
+}
+
+
+//使用类选择器时，可以在后面添加一个括号，实际上就是创建了一个minxis
+//类似定义一个方法 给别人使用
+.p4(){
+    width:100px;
+    height: 100px;
+}
+
+.p5{
+    .p4();
+}
+
+
+//定义混合函数
+.test(@width,@height,@border-color){
+    width: @width;
+    height: @height;
+    border: 1px solid @border-color;
+}
+
+.div{
+    //混合函数的调用，参数要一致
+    .test(200px,300px,#bfa);
+}
+
+span{
+    color: average(red,yellow);
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #bfa;
+    :hover{
+        background-color: darken(#bfa,50%);
+    }
+}
